@@ -1,0 +1,1 @@
+Producto: tvPrecio En Dólares: $250.0Tipo Dólar: blueCotización: 40.0Valor en pesos: $10000.00

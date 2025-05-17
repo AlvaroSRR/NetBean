@@ -1,0 +1,4 @@
+codigo;nombre;precio;tipoDolar
+1;tv;250;blue
+2;pc;700;oficial
+3;notebook;500;marca
