@@ -21,7 +21,7 @@ public class Guia_4_2 {
         double[] dolarHoy = new double[3];
         List<Producto> listaProductos = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
-        // ingreso de precio dolares
+        // ingreso de cotizaciones para dolares
         System.out.print("Ingrese valor dolar oficial: ");
         dolarHoy[0] = scanner.nextDouble();
         System.out.print("Ingrese valor dolar blue: ");
@@ -29,8 +29,8 @@ public class Guia_4_2 {
         System.out.print("Ingrese valor dolar marca: ");
         dolarHoy[2] = scanner.nextDouble();
         dolar = new Dolar(dolarHoy[0], dolarHoy[1], dolarHoy[2]);
-        //cargamos la lista
-        try (BufferedReader br = new BufferedReader(new FileReader("G:\\UTN\\2º CUATRIMESTRE\\Programacion 2\\netbean\\guia_4_2\\src\\main\\java\\com\\mycompany\\guia_4_2\\archivos\\Productos.txt"))) {
+        //cargamos la lista de productos
+        try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\alvar\\OneDrive\\Documentos\\Programacion II\\NetBean\\Guia 4\\guia_4_2\\src\\main\\java\\com\\mycompany\\guia_4_2\\archivos\\Productos.txt"))) {
             String linea;
             br.readLine();
             while ((linea = br.readLine()) != null) {
@@ -44,17 +44,26 @@ public class Guia_4_2 {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        //da formato a compra.txt
+        try (BufferedWriter bwf = new BufferedWriter(new FileWriter("C:\\Users\\alvar\\OneDrive\\Documentos\\Programacion II\\NetBean\\Guia 4\\guia_4_2\\src\\main\\java\\com\\mycompany\\guia_4_2\\archivos\\Compras.txt", false))) {
+            bwf.write("nombre;precioDolar;tipoCambio;cotizacion;precioPesos");
+        } catch (IOException e) {
+            System.out.println("Error al registrar la compra.");
+        }
         //Elección producto
         boolean compra = false;
-        System.out.print("Quiere comprar algun producto? S/N? :");
+        System.out.print("Quiere comprar algun producto? S/N?: ");
         String comprar;
         comprar = scanner.next().toUpperCase();
         if (comprar.equals("S")) {
             compra = true;
         }
+        double total = 0;
+
         while (compra) {
             System.out.print("Ingrese Id de producto: ");
-            int id;
+            int id; // compara en if
             id = scanner.nextInt();
             double precioPeso = 0;
             double cotizacion = 0;
@@ -78,19 +87,19 @@ public class Guia_4_2 {
                     System.out.println("Id: " + p.getCodigo() + " - Nombre: " + p.getNombre() + " - USD: $" + p.getPrecio() + " - Pesos: $" + String.format("%.2f", precioPeso));
                 }
             }
-            System.out.print("Comprar producto? S/N");
+            System.out.print("Comprar producto? S/N: ");
             String comprarProd;
             comprarProd = scanner.next().toUpperCase();
             if (comprarProd.equals("S")) {
-
+                total += precioPeso;
                 //guardar en Compra.txt
-                //Guardar en txt;
-                try (BufferedWriter bw = new BufferedWriter(new FileWriter("G:\\UTN\\2º CUATRIMESTRE\\Programacion 2\\netbean\\guia_4_2\\src\\main\\java\\com\\mycompany\\guia_4_2\\archivos\\Compras.txt", true))) {
+                try (BufferedWriter bw = new BufferedWriter(new FileWriter("C:\\Users\\alvar\\OneDrive\\Documentos\\Programacion II\\NetBean\\Guia 4\\guia_4_2\\src\\main\\java\\com\\mycompany\\guia_4_2\\archivos\\Compras.txt", true))) {
                     for (Producto p : listaProductos) {
                         if (id == (p.getCodigo())) {
                             // Ver formato
-                            bw.write("Producto: " + p.getNombre() + "Precio En Dólares: $" + p.getPrecio() + "Tipo Dólar: " + p.getTipoDolar() + "Cotización: " + cotizacion + "Valor en pesos: $" + String.format("%.2f", precioPeso));
                             bw.newLine();
+                            bw.write(p.getNombre() + ";" + p.getPrecio() + ";" + p.getTipoDolar() + ";" + cotizacion + ";" + String.format("%.2f", precioPeso));
+
                             System.out.println("Compra registrada con exito.");
                         }
                     }
@@ -105,23 +114,24 @@ public class Guia_4_2 {
             seguirComprando = scanner.next().toUpperCase();
             if (seguirComprando.equals("N")) {
                 compra = false;
-                /* Printear Lista de compra
-                try (BufferedReader br = new BufferedReader(new FileReader("G:\\UTN\\2º CUATRIMESTRE\\Programacion 2\\netbean\\guia_4_2\\src\\main\\java\\com\\mycompany\\guia_4_2\\archivos\\Compras.txt"))) {
+                //Printear Lista de compra
+                try (BufferedReader brc = new BufferedReader(new FileReader("C:\\Users\\alvar\\OneDrive\\Documentos\\Programacion II\\NetBean\\Guia 4\\guia_4_2\\src\\main\\java\\com\\mycompany\\guia_4_2\\archivos\\Compras.txt"))) {
                     String linea;
-                    br.readLine();
-                    while ((linea = br.readLine()) != null) {
-                        String[] tupla = linea.split(";");
-                        Producto p = new Producto(Integer.parseInt(tupla[0]), tupla[1], Double.parseDouble(tupla[2]), tupla[3]);
-                        listaProductos.add(p);
+                    brc.readLine();
+                    while ((linea = brc.readLine()) != null) {
+                        String[] tuplac = linea.split(";");
+                        System.out.println("Producto: " + tuplac[0] + " - USD: $" + tuplac[1] + " - Dolar: " + tuplac[2] + " - Cotizacion: $" + tuplac[3] + " - Valor en Pesos: $" + tuplac[4]);
                     }
-                    for (Producto lp : listaProductos) {
-                        System.out.println("Id: " + lp.getCodigo() + " - Nombre: " + lp.getNombre() + " - USD: $" + lp.getPrecio());
-                    }
+                    System.out.println("Total: $" + String.format("%.2f", total));
                 } catch (IOException e) {
                     e.printStackTrace();
-                }*/
+                }
+            } else {
+                // muestra la lista de productos de nuevo
+                for (Producto lp : listaProductos) {
+                    System.out.println("Id: " + lp.getCodigo() + " - Nombre: " + lp.getNombre() + " - USD: $" + lp.getPrecio());
+                }
             }
         }
-
     }
 }

@@ -17,7 +17,7 @@ public class Guia_4_1 {
         List<Factura> facturas = new ArrayList<>();
 
         // Leemos el archivo Clientes.txt y lo almacenamos en el HashMap
-        try (FileReader fr = new FileReader("G:\\UTN\\2º CUATRIMESTRE\\Programacion 2\\netbean\\guia_4_1\\src\\main\\java\\com\\mycompany\\guia_4_1\\archivos\\Cliente.txt"); 
+        try (FileReader fr = new FileReader("C:\\Users\\alvar\\OneDrive\\Documentos\\Programacion II\\NetBean\\Guia 4\\guia_4_1\\src\\main\\java\\com\\mycompany\\guia_4_1\\archivos\\Cliente.txt"); 
             BufferedReader br = new BufferedReader(fr)) {
             // try (BufferedReader br = new BufferedReader(new FileReader("Clientes.txt")))
             String linea;
@@ -36,7 +36,7 @@ public class Guia_4_1 {
         }
 
         // Leemos el archivo Facturas.txt y lo almacenamos en el ArrayList
-        try (BufferedReader br = new BufferedReader(new FileReader("G:\\UTN\\2º CUATRIMESTRE\\Programacion 2\\netbean\\guia_4_1\\src\\main\\java\\com\\mycompany\\guia_4_1\\archivos\\Factura.txt"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\alvar\\OneDrive\\Documentos\\Programacion II\\NetBean\\Guia 4\\guia_4_1\\src\\main\\java\\com\\mycompany\\guia_4_1\\archivos\\Factura.txt"))) {
             String linea;
             br.readLine();
             while ((linea = br.readLine()) != null) {
