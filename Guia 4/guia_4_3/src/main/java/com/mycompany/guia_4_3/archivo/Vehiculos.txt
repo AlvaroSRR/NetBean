@@ -1,0 +1,4 @@
+codigo;patente;estado;conductor
+1;AR738PJ;1;
+2;AR555TK;0;1
+3;AR666PT;1;3

@@ -1,3 +1,3 @@
 nombre;precioDolar;tipoCambio;cotizacion;precioPesos
-notebook;500.0;marca;800.0;400000,00
-notebook;500.0;marca;800.0;400000,00
+notebook;500.0;marca;900.0;450000.00
+pc;700.0;oficial;300.0;210000.00
