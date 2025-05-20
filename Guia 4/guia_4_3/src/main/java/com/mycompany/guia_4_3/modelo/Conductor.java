@@ -33,5 +33,4 @@ public class Conductor {
     public String toString() {
         return ("Codigo: " + codigo + " - Nombre: " + nombre);
     }
-
 }
