@@ -1,4 +1,5 @@
 codigo;nombre
+0;Conductor no Asignado
 1;juan perez
 2;david ruiz
 3;jorge suspenso

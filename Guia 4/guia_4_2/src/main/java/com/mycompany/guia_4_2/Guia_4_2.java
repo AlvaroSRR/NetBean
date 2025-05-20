@@ -30,7 +30,7 @@ public class Guia_4_2 {
         dolarHoy[2] = scanner.nextDouble();
         dolar = new Dolar(dolarHoy[0], dolarHoy[1], dolarHoy[2]);
         //cargamos la lista de productos
-        try (BufferedReader br = new BufferedReader(new FileReader("G:\\UTN\\2º CUATRIMESTRE\\Programacion 2\\NetBean\\Guia 4\\guia_4_2\\src\\main\\java\\com\\mycompany\\guia_4_2\\archivos\\Productos.txt"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\alvar\\OneDrive\\Documentos\\Programacion II\\NetBean\\Guia 4\\guia_4_2\\src\\main\\java\\com\\mycompany\\guia_4_2\\archivos\\Productos.txt"))) {
             String linea;
             br.readLine();
             while ((linea = br.readLine()) != null) {
@@ -46,7 +46,7 @@ public class Guia_4_2 {
         }
 
         //da formato a compra.txt
-        try (BufferedWriter bwf = new BufferedWriter(new FileWriter("G:\\UTN\\2º CUATRIMESTRE\\Programacion 2\\NetBean\\Guia 4\\guia_4_2\\src\\main\\java\\com\\mycompany\\guia_4_2\\archivos\\Compras.txt", false))) {
+        try (BufferedWriter bwf = new BufferedWriter(new FileWriter("C:\\Users\\alvar\\OneDrive\\Documentos\\Programacion II\\NetBean\\Guia 4\\guia_4_2\\src\\main\\java\\com\\mycompany\\guia_4_2\\archivos\\Compras.txt", false))) {
             bwf.write("nombre;precioDolar;tipoCambio;cotizacion;precioPesos");
         } catch (IOException e) {
             System.out.println("Error al registrar la compra.");
@@ -93,7 +93,7 @@ public class Guia_4_2 {
             if (comprarProd.equals("S")) {
                 total += precioPeso;
                 //guardar en Compra.txt
-                try (BufferedWriter bw = new BufferedWriter(new FileWriter("G:\\UTN\\2º CUATRIMESTRE\\Programacion 2\\NetBean\\Guia 4\\guia_4_2\\src\\main\\java\\com\\mycompany\\guia_4_2\\archivos\\Compras.txt", true))) {
+                try (BufferedWriter bw = new BufferedWriter(new FileWriter("C:\\Users\\alvar\\OneDrive\\Documentos\\Programacion II\\NetBean\\Guia 4\\guia_4_2\\src\\main\\java\\com\\mycompany\\guia_4_2\\archivos\\Compras.txt", true))) {
                     for (Producto p : listaProductos) {
                         if (id == (p.getCodigo())) {
                             // Ver formato
@@ -115,7 +115,7 @@ public class Guia_4_2 {
             if (seguirComprando.equals("N")) {
                 compra = false;
                 //Printear Lista de compra
-                try (BufferedReader brc = new BufferedReader(new FileReader("G:\\UTN\\2º CUATRIMESTRE\\Programacion 2\\NetBean\\Guia 4\\guia_4_2\\src\\main\\java\\com\\mycompany\\guia_4_2\\archivos\\Compras.txt"))) {
+                try (BufferedReader brc = new BufferedReader(new FileReader("C:\\Users\\alvar\\OneDrive\\Documentos\\Programacion II\\NetBean\\Guia 4\\guia_4_2\\src\\main\\java\\com\\mycompany\\guia_4_2\\archivos\\Compras.txt"))) {
                     String linea;
                     brc.readLine();
                     while ((linea = brc.readLine()) != null) {
