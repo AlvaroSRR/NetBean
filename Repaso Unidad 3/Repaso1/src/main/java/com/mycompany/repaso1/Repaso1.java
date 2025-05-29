@@ -90,6 +90,7 @@ public class Repaso1 {
     }
 
     public static void main(String[] args) {
+        System.out.println("--- GESTOR HABITACIONES ---");
         new Repaso1().menu();
     }
 }
