@@ -1,0 +1,16 @@
+[ {
+  "codigo" : "ESP001",
+  "descripcion" : "Programación"
+}, {
+  "codigo" : "ESP002",
+  "descripcion" : "Diseño Gráfico"
+}, {
+  "codigo" : "ESP003",
+  "descripcion" : "Redes Informáticas"
+}, {
+  "codigo" : "ESP004",
+  "descripcion" : "Administración"
+}, {
+  "codigo" : "ESP005",
+  "descripcion" : "Multimedia"
+} ]
