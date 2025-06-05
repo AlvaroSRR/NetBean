@@ -1,0 +1,6 @@
+Juan,7,8,9
+Maria,10,9,8
+Pedro,6,5,7
+Alvaro,10,9,8
+Nano,9,9,9
+Maga,1,3,5,8

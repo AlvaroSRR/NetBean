@@ -1,0 +1,4 @@
+com\mycompany\promedio_notas\Main.class
+com\mycompany\promedio_notas\vista\VistaAlumno.class
+com\mycompany\promedio_notas\modelo\Alumno.class
+com\mycompany\promedio_notas\controlador\ControladorAlumno.class

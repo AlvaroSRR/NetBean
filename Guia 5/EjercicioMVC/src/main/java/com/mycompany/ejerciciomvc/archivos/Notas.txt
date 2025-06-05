@@ -1,0 +1,4 @@
+Ruiz,David,10,8,6,7
+Rivera,Alvaro,10,9,10,9
+Rivera,Danilo,9,8,6,7
+Albri,Facundo,8,8,8,9
